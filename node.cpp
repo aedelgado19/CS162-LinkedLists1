@@ -1,4 +1,5 @@
 #include <iostream>
+#include "node.h"
 using namespace std;
 
 //get next node
@@ -14,13 +15,13 @@ void Node::setNext(Node* node){
 }
 
 //constructor
-Node(Student*){
+Node::Node(Student*){
 
 
 }
 
 //destructor
-~Node(){
+Node::~Node(){
 
 
 }

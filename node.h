@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Student.h"
+#include "student.h"
 //header for node class
 class Node{
 public:
@@ -7,6 +7,7 @@ public:
   void setNext(Node* node);
   Node(Student*);
   ~Node();
-  
+
+private:
 
 };
