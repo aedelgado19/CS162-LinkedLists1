@@ -7,7 +7,9 @@ public:
   void setNext(Node* node);
   Node(Student*);
   ~Node();
-
+  void setStudent(Student *inputStudent);
+  Student* getStudent();
 private:
-
+  Student *studentPtr;
+  Node* next;
 };

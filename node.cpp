@@ -14,6 +14,16 @@ void Node::setNext(Node* node){
   
 }
 
+void Node::setStudent(Student *inputStudent){
+
+
+}
+
+Student* Node::getStudent(){
+
+}
+
+
 //constructor
 Node::Node(Student*){
 
@@ -25,3 +35,4 @@ Node::~Node(){
 
 
 }
+

@@ -11,6 +11,7 @@ using namespace std;
 //function prototypes
 void addStudent();
 void print();
+Node* head = NULL; //beginning of list
 
 int main(){
   char input[10]; //holds either add or print currently
@@ -57,6 +58,14 @@ void addStudent(){
   cin >> gpa;
   cin.get();
   student->setGPA(gpa);
+}
 
-  return 0;
+void print(Node* next){
+  if(next == head){
+    cout << "list: " << endl;
+  }
+  if(next != NULL){
+    cout << next->getFirstName() << " " << next->getLastName();
+  }
+  
 }
