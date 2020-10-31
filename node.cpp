@@ -15,12 +15,12 @@ void Node::setNext(Node* node){
 }
 
 void Node::setStudent(Student *inputStudent){
-
+  studentPtr = inputStudent;
 
 }
 
 Student* Node::getStudent(){
-
+  return studentPtr;
 }
 
 

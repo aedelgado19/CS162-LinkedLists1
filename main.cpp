@@ -13,24 +13,7 @@ void addStudent();
 void print();
 Node* head = NULL; //beginning of list
 
-int main(){
-  char input[10]; //holds either add or print currently
-  cout << "Welcome to (Linked) StudentList. " << endl;
-  cout << "To add a student, type 'ADD'." << endl;
-  cout << "To print out list, type 'PRINT'." << endl;
-  cout << "To quit, type 'QUIT'." << endl;
-  cout << " > " << endl;
-  cin.get(input, 10);
-  cin.get();
-  while(strcmp(input, "QUIT") != 0){
-    if(strcmp(input, "ADD") == 0){
-      addStudent();
-    }
-    else if(strcmp(input, "PRINT") == 0){
-      print();
-    }
-  }
-}
+//add a new student to linked list
 void addStudent(){
   char fName[50];
   char lName[50];
@@ -60,12 +43,43 @@ void addStudent(){
   student->setGPA(gpa);
 }
 
+//print out list
 void print(Node* next){
   if(next == head){
     cout << "list: " << endl;
   }
   if(next != NULL){
-    cout << next->getFirstName() << " " << next->getLastName();
+    //cout << next->getFirstName() << " " << next->getLastName();
   }
-  
 }
+
+int main(){
+  char input[10]; //holds either add or print currently
+  cout << "Welcome to (Linked) StudentList. " << endl;
+  cout << "To add a student, type 'ADD'." << endl;
+  cout << "To print out list, type 'PRINT'." << endl;
+  cout << "To quit, type 'QUIT'." << endl;
+
+  //while they havent quit..
+  while(strcmp(input, "QUIT") != 0){
+    cout << "Enter a command (ADD/PRINT/QUIT)" << endl;
+    cout << " > "; //prompt user again
+    cin.get(input, 10);
+    cin.get();
+
+    //make to uppercase
+    for(int i = 0; i < strlen(input); i++){
+      input[i] = toupper(input[i]);
+    }
+
+    //call respective functions
+    if(strcmp(input, "ADD") == 0){
+      addStudent();
+    }
+    else if(strcmp(input, "PRINT") == 0){
+      print(head);
+    }
+  }
+  cout << "Now quitting. Goodbye! " << endl;
+}
+
