@@ -41,6 +41,24 @@ void addStudent(){
   cin >> gpa;
   cin.get();
   student->setGPA(gpa);
+
+  //add into node
+  Node* current = head;
+
+  //first pass thru, no nodes yet
+  if(current == NULL){
+    head = new Node(student);
+    head->setStudent(student);
+    //head->setNext(next);
+  }
+  else {
+    //while you have not hit end of list yet..
+    while(current->getNext() != NULL){
+      current = current->getNext(); //traverse through by setting current to next
+    }
+    current->setNext(new Node(student));
+    current->getNext()->setStudent(student);
+  }
 }
 
 //print out list
@@ -52,6 +70,7 @@ void print(Node* next){
     //cout << next->getFirstName() << " " << next->getLastName();
   }
 }
+
 
 int main(){
   char input[10]; //holds either add or print currently
