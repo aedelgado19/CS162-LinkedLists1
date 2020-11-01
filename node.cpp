@@ -4,13 +4,13 @@ using namespace std;
 
 //get next node
 Node* Node::getNext(){
-
+  return next;
   
 }
 
 //set next node
 void Node::setNext(Node* node){
-
+  next = node;
   
 }
 
