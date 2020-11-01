@@ -11,7 +11,7 @@ using namespace std;
 
 //function prototypes
 void addStudent(Node* head);
-void print();
+void print(Node* next, Node* head);
 
 
 //add a new student to linked list
@@ -63,7 +63,7 @@ void addStudent(Node* head){
 }
 
 //print out list
-void print(Node* next){
+void print(Node* next, Node* head){
   if(next == head){
     cout << "list: " << endl;
   }
