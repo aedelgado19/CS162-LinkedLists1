@@ -68,12 +68,13 @@ void print(Node* &head){
   Node *ptr = head;
   Student *studentPtr = NULL;
   
-  while(ptr != NULL){
+  if(ptr != NULL){
     studentPtr = ptr->getStudent();
     cout << "list: " << endl;
     cout << studentPtr->getFirstName() << " " << studentPtr->getLastName()
 	 << ", " << studentPtr->getID() << ", " << studentPtr->getGPA() << endl;
     ptr = ptr->getNext();
+    print(head);
   }
 }
 
