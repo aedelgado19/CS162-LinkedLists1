@@ -58,7 +58,6 @@ void addStudent(Node* &head){
       current = current->getNext(); //traverse through by setting current to next
     }
     current->setNext(new Node(student));
-    current->getNext()->setStudent(student);
     current->getNext()->setNext(NULL);
   }
 }
@@ -74,7 +73,7 @@ void print(Node* &head){
     cout << studentPtr->getFirstName() << " " << studentPtr->getLastName()
 	 << ", " << studentPtr->getID() << ", " << studentPtr->getGPA() << endl;
     ptr = ptr->getNext();
-    print(head);
+    print(ptr);
   }
 }
 
