@@ -6,15 +6,16 @@
 
 #include <iostream>
 #include "node.h"
+#include <cstring>
 using namespace std;
 
 //function prototypes
-void addStudent();
+void addStudent(Node* head);
 void print();
-Node* head = NULL; //beginning of list
+
 
 //add a new student to linked list
-void addStudent(){
+void addStudent(Node* head){
   char fName[50];
   char lName[50];
   int id = 0;
@@ -73,6 +74,8 @@ void print(Node* next){
 
 
 int main(){
+
+  Node* head = NULL; //beginning of list
   char input[10]; //holds either add or print currently
   cout << "Welcome to (Linked) StudentList. " << endl;
   cout << "To add a student, type 'ADD'." << endl;
@@ -93,7 +96,7 @@ int main(){
 
     //call respective functions
     if(strcmp(input, "ADD") == 0){
-      addStudent();
+      addStudent(head);
     }
     else if(strcmp(input, "PRINT") == 0){
       print(head);
