@@ -10,12 +10,12 @@
 using namespace std;
 
 //function prototypes
-void addStudent(Node* head);
-void print(Node* head);
+void addStudent(Node* &head);
+void print(Node* &head);
 
 
 //add a new student to linked list
-void addStudent(Node* head){
+void addStudent(Node* &head){
   char fName[50];
   char lName[50];
   int id = 0;
@@ -50,25 +50,30 @@ void addStudent(Node* head){
   if(current == NULL){
     head = new Node(student);
     head->setStudent(student);
-    //head->setNext(next);
+    head->setNext(NULL); 
   }
   else {
-    //while you have not hit end of list yet..
+    current = head;
     while(current->getNext() != NULL){
       current = current->getNext(); //traverse through by setting current to next
     }
     current->setNext(new Node(student));
     current->getNext()->setStudent(student);
+    current->getNext()->setNext(NULL);
   }
 }
 
 //print out list
-void print(Node* head){
-  if(next == head){
+void print(Node* &head){
+  Node *ptr = head;
+  Student *studentPtr = NULL;
+  
+  while(ptr != NULL){
+    studentPtr = ptr->getStudent();
     cout << "list: " << endl;
-  }
-  if(next != NULL){
-    //cout << next->getFirstName() << " " << next->getLastName();
+    cout << studentPtr->getFirstName() << " " << studentPtr->getLastName()
+	 << ", " << studentPtr->getID() << ", " << studentPtr->getGPA() << endl;
+    ptr = ptr->getNext();
   }
 }
 
@@ -100,6 +105,7 @@ int main(){
     }
     else if(strcmp(input, "PRINT") == 0){
       print(head);
+      
     }
   }
   cout << "Now quitting. Goodbye! " << endl;
