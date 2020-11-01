@@ -5,7 +5,7 @@ class Node{
 public:
   Node* getNext();
   void setNext(Node* node);
-  Node(Student*);
+  Node(Student* inputStudent);
   ~Node();
   void setStudent(Student *inputStudent);
   Student* getStudent();

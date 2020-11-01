@@ -43,8 +43,5 @@ Student::Student(){
 }
 
 Student::~Student(){
-  delete &fName;
-  delete &lName;
-  delete &id;
-  delete &gpa;
+  
 }

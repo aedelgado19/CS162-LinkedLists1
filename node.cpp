@@ -25,14 +25,13 @@ Student* Node::getStudent(){
 
 
 //constructor
-Node::Node(Student*){
-
+Node::Node(Student* inputStudent){
+  studentPtr = inputStudent;
 
 }
 
 //destructor
 Node::~Node(){
-
-
+  delete studentPtr;
 }
 

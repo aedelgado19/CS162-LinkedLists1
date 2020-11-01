@@ -42,7 +42,7 @@ void addStudent(Node* &head){
   cin >> gpa;
   cin.get();
   student->setGPA(gpa);
-
+  
   //add into node
   Node* current = head;
 
@@ -66,10 +66,9 @@ void addStudent(Node* &head){
 void print(Node* &head){
   Node *ptr = head;
   Student *studentPtr = NULL;
-  
+
   if(ptr != NULL){
     studentPtr = ptr->getStudent();
-    cout << "list: " << endl;
     cout << studentPtr->getFirstName() << " " << studentPtr->getLastName()
 	 << ", " << studentPtr->getID() << ", " << studentPtr->getGPA() << endl;
     ptr = ptr->getNext();
